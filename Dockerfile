@@ -51,7 +51,8 @@ RUN echo "source /opt/PX4-Autopilot/Tools/simulation/gazebo-classic/setup_gazebo
     echo "export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/opt/PX4-Autopilot" >> /root/.bashrc && \
     echo "export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/opt/PX4-Autopilot/Tools/sitl_gazebo" >> /root/.bashrc
 
+# 確保掛載的工作空間能正確使用
+RUN mkdir -p /my_ws/src
+
+# 最後執行 bash，保持容器運行
 CMD ["/bin/bash"]
-
-
-
